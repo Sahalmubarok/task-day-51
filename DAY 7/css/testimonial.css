@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.navigasibar {
+    background-color: #f4f3f3;
+    box-shadow: 0px 0px 1px black;
+    position: fixed;
+    width: 100%;
+    height: 75px;
+    top: 0;
+    z-index: 1;
+}
+
+.navigasi1 {
+    display: flex;
+    height: 100%;
+    margin-left: 30px;
+    align-items: center;
+}
+
+.navigasi1 ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    gap: 50px;
+}
+
+.navigasi2 {
+    display: flex;
+    margin-right: 70px;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.buttoncntk {
+    background-color: #111727;
+    color: white;
+    padding: 10px;
+    width: 100px;
+    height: fit-content;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    align-items: center;
+}
+
+.navigasilink {
+    font-size: 20px;
+    width: max-content;
+}
+
+.navigasilink a {
+    text-decoration: none;
+    color: black;
+}
+
+.navigasilink a:hover {
+    font-weight: bolder;
+}
+
+.contain {
+    justify-content: center;
+    display: flex;
+}
+
+.testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.testimonial {
+    width: 25%;
+    margin: 0px 15px 30px 15px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.quote {
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.author {
+    font-weight: bold;
+    text-align: right;
+}
+
+.profile-testimonial {
+    width: 100%;
+}
+
+#hamburgerbtn {
+    display: none;
+}
+
+.hamburgernav {
+    display: none;
+    margin-top: 78px;
+    top: 0;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+.hamburgernav a {
+    color: white;
+    border: 2px solid white;
+    background-color: #9a9a9a;
+    text-align: center;
+    padding: 10px;
+}
+
+.hamburgernav .active {
+    background-color: #ff4500;
+}
+
+
+
+@media only screen and (max-width: 900px) {
+    .testimonial {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .testimonial {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .navclp {
+        display: none;
+    }
+
+    #hamburgerbtn {
+        display: block;
+    }
+
+    .hamburgernav {
+        font-size: 23px;
+        display: none;
+        flex-direction: column;
+    }
+}
