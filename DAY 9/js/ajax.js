@@ -1,4 +1,19 @@
-
+// penggabungan promise dan juga ajax
+const dataProm = new Promise((resolves, rejected) => {
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', 'https://api.npoint.io/0fd0e928045a35c83e0c', true)
+    xhr.onload = () => {
+        if (xhr.status = 200) {
+            resolves(JSON.parse(xhr.response))
+        } else {
+            rejected("Internal Server Error!")
+        }
+    }
+    xhr.onerror = () => { // kesalahan kita sendiri / client
+        rejected("Internet tidak ada!")
+    }
+    xhr.send()
+})
 //
 function html(item) {
     return `<div class="testimonial">
@@ -10,8 +25,9 @@ function html(item) {
 }
 
 // 
-function testimonialData() {
+async function testimonialData() {
     let testimonialHTML = ``
+    const Testimonial = await dataProm
     Testimonial.forEach((item) => {
         testimonialHTML += html(item)
     })
@@ -22,8 +38,9 @@ function testimonialData() {
 testimonialData()
 
 // 
-function filterTestimonials(Rating) {
+async function filterTestimonials(Rating) {
     let testimonialHTML = ``
+    const Testimonial = await dataProm
     const testimonialFiltered = Testimonial.filter((item) => {
         return item.Rating === Rating
     })
