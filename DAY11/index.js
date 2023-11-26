@@ -33,6 +33,7 @@ function addproject(req, res){
 
     console.log("namaProject :", inputProject)
     console.log("Description :", inputDesc)
+    res.redirect('addproject')
 }
 
 function myprojectdetail(req, res){
