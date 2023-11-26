@@ -1,19 +1,26 @@
 //
-const dataProm = new Promise((resolves, rejected) => {
-    const xhr = new XMLHttpRequest()
-    xhr.open('GET', 'https://api.npoint.io/0fd0e928045a35c83e0c', true)
-    xhr.onload = () => {
-        if (xhr.status = 200) {
-            resolves(JSON.parse(xhr.response))
-        } else {
-            rejected("Internal Server Error!")
-        }
+const Testimonial = [
+    {
+        Author: "Sahal",
+        Content: "Kokoh Spritual, Mapan Intelektual",
+        Image: "https://images.pexels.com/photos/17681915/pexels-photo-17681915/free-photo-of-pemandangan-pegunungan-alam-air.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        Rating: 5
+    },
+    {
+        Author: "Dawn Klark",
+        Content: "Tidak ada kata terlambat untuk mulai menciptakan kehidupan yg kamu inginkan",
+        Image: "https://images.pexels.com/photos/5215886/pexels-photo-5215886.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        Rating: 3
+    },
+
+    {
+        Author: "Albert Einstein",
+        Content: "Jauhi orang-orang negatif, mereka punya masalah untuk setiap solusi ",
+        Image: "https://images.pexels.com/photos/1453076/pexels-photo-1453076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        Rating: 5
     }
-    xhr.onerror = () => { // kesalahan kita sendiri / client
-        rejected("Internet tidak ada!")
-    }
-    xhr.send()
-})
+]
+
 //
 function html(item) {
     return `<div class="testimonial">
@@ -25,9 +32,8 @@ function html(item) {
 }
 
 // 
-async function testimonialData() {
+function testimonialData() {
     let testimonialHTML = ``
-    const Testimonial = await dataProm
     Testimonial.forEach((item) => {
         testimonialHTML += html(item)
     })
@@ -38,9 +44,8 @@ async function testimonialData() {
 testimonialData()
 
 // 
-async function filterTestimonials(Rating) {
+function filterTestimonials(Rating) {
     let testimonialHTML = ``
-    const Testimonial = await dataProm
     const testimonialFiltered = Testimonial.filter((item) => {
         return item.Rating === Rating
     })

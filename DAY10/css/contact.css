@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    text-decoration: none;
+}
+
+body {
+    background-color: #dce0e4;
+}
+
+.btn-contact {
+    background-color: black !important;
+    color: white;
+}
+
+.navbar-logo {
+    height: 40px;
+    width: 50px;
+    object-fit: contain;
+}
+
+.active {
+    color: black !important;
+}
+
+.btn-submit {
+    background-color: black;
+    color: white;
+}

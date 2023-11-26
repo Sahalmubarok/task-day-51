@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    text-decoration: none;
+}
+
+html {
+    font-family: poppin, sans-serif;
+}
+
+body {
+    background-color: #dce0e4;
+}
+
+.navbar-logo {
+    height: 40px !important;
+    width: 50px !important;
+    object-fit: contain !important;
+}
+
+.active {
+    color: black !important;
+    }
+
+#btn-icon a {
+    color: black;
+}
+
