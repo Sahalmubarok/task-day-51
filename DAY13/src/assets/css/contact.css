@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    text-decoration: none;
+}
+
+body {
+    background-color: #dce0e4;
+}
+
+.btn-contact {
+    background-color: black !important;
+    color: white;
+}
+
+.navbar-logo {
+    height: 40px !important;
+    width: 50px !important;
+    object-fit: contain !important;
+}
+
+.active {
+    color: black !important;
+}
+
+.btn-submit {
+    background-color: black !important;
+    color: white !important;
+}

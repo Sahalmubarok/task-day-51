@@ -13,7 +13,7 @@ app.get('/', home)
 app.get('/contact', contact)
 app.get('/addproject', addprojectview)
 app.post('/addproject', addproject)
-app.get('/myprojectdetail', myprojectdetail)
+app.get('/myprojectdetail/:id', myprojectdetail)
 
 function home(req, res){
     res.render('bootstrap-index')
@@ -37,7 +37,19 @@ function addproject(req, res){
 }
 
 function myprojectdetail(req, res){
-    res.render('myproject-detail')
+    const { id } = req.params //destructuring
+    const project = "LMS HIGH SCHOOL"
+    const desc = "Pembuatan aplikasi LMS HIGH SCHOOL "
+
+    console.log("Id nya adalah", id)
+
+    const dataMP = {
+        id,
+        project,
+        desc
+    }
+
+    res.render('myproject-detail', { dataMP })
 }
 
 app.listen(port, () => {
